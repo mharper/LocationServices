@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
 
 @class LocationServicesViewController;
 
-@interface LocationServicesAppDelegate : UIResponder <UIApplicationDelegate>
+@interface LocationServicesAppDelegate : UIResponder <UIApplicationDelegate, CLLocationManagerDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 

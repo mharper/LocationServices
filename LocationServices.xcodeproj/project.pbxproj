@@ -22,6 +22,7 @@
 		D8E103511410263600A403DB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8E103301410263600A403DB /* CoreGraphics.framework */; };
 		D8E103591410263600A403DB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D8E103571410263600A403DB /* InfoPlist.strings */; };
 		D8E1035C1410263600A403DB /* LocationServicesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D8E1035B1410263600A403DB /* LocationServicesTests.m */; };
+		D8E10366141026E900A403DB /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8E10365141026E900A403DB /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,22 +40,23 @@
 		D8E1032C1410263600A403DB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D8E1032E1410263600A403DB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D8E103301410263600A403DB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		D8E103341410263600A403DB /* LocationServices-Info.plist */ = {isa = PBXFileReference; path = "LocationServices-Info.plist"; sourceTree = "<group>"; };
+		D8E103341410263600A403DB /* LocationServices-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LocationServices-Info.plist"; sourceTree = "<group>"; };
 		D8E103361410263600A403DB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D8E103381410263600A403DB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		D8E1033A1410263600A403DB /* LocationServices-Prefix.pch */ = {isa = PBXFileReference; path = "LocationServices-Prefix.pch"; sourceTree = "<group>"; };
-		D8E1033B1410263600A403DB /* LocationServicesAppDelegate.h */ = {isa = PBXFileReference; path = LocationServicesAppDelegate.h; sourceTree = "<group>"; };
+		D8E1033A1410263600A403DB /* LocationServices-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LocationServices-Prefix.pch"; sourceTree = "<group>"; };
+		D8E1033B1410263600A403DB /* LocationServicesAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocationServicesAppDelegate.h; sourceTree = "<group>"; };
 		D8E1033C1410263600A403DB /* LocationServicesAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocationServicesAppDelegate.m; sourceTree = "<group>"; };
-		D8E1033E1410263600A403DB /* LocationServicesViewController.h */ = {isa = PBXFileReference; path = LocationServicesViewController.h; sourceTree = "<group>"; };
+		D8E1033E1410263600A403DB /* LocationServicesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocationServicesViewController.h; sourceTree = "<group>"; };
 		D8E1033F1410263600A403DB /* LocationServicesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocationServicesViewController.m; sourceTree = "<group>"; };
 		D8E103421410263600A403DB /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/LocationServicesViewController_iPhone.xib; sourceTree = "<group>"; };
 		D8E103451410263600A403DB /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/LocationServicesViewController_iPad.xib; sourceTree = "<group>"; };
 		D8E1034C1410263600A403DB /* LocationServicesTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LocationServicesTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8E1034D1410263600A403DB /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		D8E103561410263600A403DB /* LocationServicesTests-Info.plist */ = {isa = PBXFileReference; path = "LocationServicesTests-Info.plist"; sourceTree = "<group>"; };
+		D8E103561410263600A403DB /* LocationServicesTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LocationServicesTests-Info.plist"; sourceTree = "<group>"; };
 		D8E103581410263600A403DB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		D8E1035A1410263600A403DB /* LocationServicesTests.h */ = {isa = PBXFileReference; path = LocationServicesTests.h; sourceTree = "<group>"; };
+		D8E1035A1410263600A403DB /* LocationServicesTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocationServicesTests.h; sourceTree = "<group>"; };
 		D8E1035B1410263600A403DB /* LocationServicesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocationServicesTests.m; sourceTree = "<group>"; };
+		D8E10365141026E900A403DB /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8E10366141026E900A403DB /* CoreLocation.framework in Frameworks */,
 				D8E1032D1410263600A403DB /* UIKit.framework in Frameworks */,
 				D8E1032F1410263600A403DB /* Foundation.framework in Frameworks */,
 				D8E103311410263600A403DB /* CoreGraphics.framework in Frameworks */,
@@ -85,6 +88,7 @@
 		D8E1031D1410263500A403DB = {
 			isa = PBXGroup;
 			children = (
+				D8E10365141026E900A403DB /* CoreLocation.framework */,
 				D8E103321410263600A403DB /* LocationServices */,
 				D8E103541410263600A403DB /* LocationServicesTests */,
 				D8E1032B1410263600A403DB /* Frameworks */,
@@ -201,6 +205,7 @@
 		D8E1031F1410263500A403DB /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastUpgradeCheck = 0420;
 				ORGANIZATIONNAME = "Standalone Code LLC";
 			};
 			buildConfigurationList = D8E103221410263500A403DB /* Build configuration list for PBXProject "LocationServices" */;
