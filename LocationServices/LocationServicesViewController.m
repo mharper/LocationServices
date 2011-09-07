@@ -10,6 +10,13 @@
 
 @implementation LocationServicesViewController
 
+@synthesize latitudeLabel;
+@synthesize longitudeLabel;
+@synthesize headingLabel;
+@synthesize altitudeLabel;
+@synthesize currentLocation;
+@synthesize currentHeading;
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -21,7 +28,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+  [self addObserver:self forKeyPath:@"currentLocation" options:NSKeyValueObservingOptionNew context:nil];
+  [self addObserver:self forKeyPath:@"currentHeading" options:NSKeyValueObservingOptionNew context:nil];
 }
 
 - (void)viewDidUnload
@@ -58,6 +66,41 @@
       return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
   } else {
       return YES;
+  }
+}
+
+#pragma mark CLLocationManagerDelegate methods
+
+- (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status
+{
+  NSLog(@"didChangeAuthorizationStatus called with status %d", status);
+}
+
+-(void) locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
+{
+  self.currentLocation = newLocation;
+}
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateHeading:(CLHeading *)newHeading
+{
+  self.currentHeading = newHeading;
+}
+
+#pragma mark KVO
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+  if ([keyPath isEqualToString:@"currentLocation"])
+  {
+  CLLocation *newLocation = [change objectForKey:NSKeyValueChangeNewKey];
+  latitudeLabel.text = [NSString stringWithFormat:@"%f", newLocation.coordinate.latitude];
+  longitudeLabel.text = [NSString stringWithFormat:@"%f", newLocation.coordinate.longitude];
+  altitudeLabel.text = [NSString stringWithFormat:@"%f", newLocation.altitude];
+  }
+  else if ([keyPath isEqualToString:@"currentHeading"])
+  {
+    CLHeading *newHeading = [change objectForKey:NSKeyValueChangeNewKey];
+    headingLabel.text = [NSString stringWithFormat:@"%f", newHeading.magneticHeading];
   }
 }
 

@@ -11,7 +11,7 @@
 
 @class LocationServicesViewController;
 
-@interface LocationServicesAppDelegate : UIResponder <UIApplicationDelegate, CLLocationManagerDelegate>
+@interface LocationServicesAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 

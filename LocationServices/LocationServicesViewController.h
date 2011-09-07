@@ -7,7 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
 
-@interface LocationServicesViewController : UIViewController
+@interface LocationServicesViewController : UIViewController<CLLocationManagerDelegate>
+{
+  
+}
+
+@property (strong, nonatomic) IBOutlet UILabel *latitudeLabel;
+@property (strong, nonatomic) IBOutlet UILabel *longitudeLabel;
+@property (strong, nonatomic) IBOutlet UILabel *headingLabel;
+@property (strong, nonatomic) IBOutlet UILabel *altitudeLabel;
+@property (strong, nonatomic) CLLocation *currentLocation;
+@property (strong, nonatomic) CLHeading *currentHeading;
 
 @end

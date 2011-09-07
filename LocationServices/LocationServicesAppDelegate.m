@@ -63,9 +63,10 @@ CLLocationManager *locationManager;
   if (locationManager == nil)
   {
     locationManager = [[CLLocationManager alloc] init];
-    locationManager.delegate = self;
+    locationManager.delegate = self.viewController;
   }
   [locationManager startUpdatingLocation];
+  [locationManager startUpdatingHeading];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
@@ -75,14 +76,6 @@ CLLocationManager *locationManager;
    Save data if appropriate.
    See also applicationDidEnterBackground:.
    */
-}
-
-
-#pragma mark CLLocationManagerDelegate methods
-
-- (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status
-{
-  NSLog(@"didChangeAuthorizationStatus called with status %d", status);
 }
 
 @end
