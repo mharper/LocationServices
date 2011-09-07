@@ -40,6 +40,7 @@ CLLocationManager *locationManager;
   if (locationManager != nil)
   {
     [locationManager stopUpdatingLocation];
+    [locationManager stopUpdatingHeading];
   }
 }
 
