@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B5E105CA141862000088AB8C /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B5E105C9141862000088AB8C /* Icon@2x.png */; };
+		B5E105CC141862450088AB8C /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B5E105CB141862450088AB8C /* Icon.png */; };
+		B5E105CE141865350088AB8C /* AppIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = B5E105CD141865350088AB8C /* AppIcon.png */; };
 		D8E1032D1410263600A403DB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8E1032C1410263600A403DB /* UIKit.framework */; };
 		D8E1032F1410263600A403DB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8E1032E1410263600A403DB /* Foundation.framework */; };
 		D8E103311410263600A403DB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8E103301410263600A403DB /* CoreGraphics.framework */; };
@@ -36,6 +39,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B5E105C9141862000088AB8C /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		B5E105CB141862450088AB8C /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		B5E105CD141865350088AB8C /* AppIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon.png; sourceTree = "<group>"; };
 		D8E103281410263600A403DB /* LocationServices.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocationServices.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8E1032C1410263600A403DB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D8E1032E1410263600A403DB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -85,9 +91,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B5E105CF141866270088AB8C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B5E105CD141865350088AB8C /* AppIcon.png */,
+				B5E105CB141862450088AB8C /* Icon.png */,
+				B5E105C9141862000088AB8C /* Icon@2x.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		D8E1031D1410263500A403DB = {
 			isa = PBXGroup;
 			children = (
+				B5E105CF141866270088AB8C /* Resources */,
 				D8E10365141026E900A403DB /* CoreLocation.framework */,
 				D8E103321410263600A403DB /* LocationServices */,
 				D8E103541410263600A403DB /* LocationServicesTests */,
@@ -234,6 +251,9 @@
 				D8E103371410263600A403DB /* InfoPlist.strings in Resources */,
 				D8E103431410263600A403DB /* LocationServicesViewController_iPhone.xib in Resources */,
 				D8E103461410263600A403DB /* LocationServicesViewController_iPad.xib in Resources */,
+				B5E105CA141862000088AB8C /* Icon@2x.png in Resources */,
+				B5E105CC141862450088AB8C /* Icon.png in Resources */,
+				B5E105CE141865350088AB8C /* AppIcon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -389,10 +409,12 @@
 		D8E103611410263600A403DB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Christopher Sexton (TAEU4KSXF8)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LocationServices/LocationServices-Prefix.pch";
 				INFOPLIST_FILE = "LocationServices/LocationServices-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "B52D6E53-E9EA-47D1-873E-AD4A57499E17";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -450,6 +472,7 @@
 				D8E103611410263600A403DB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D8E103621410263600A403DB /* Build configuration list for PBXNativeTarget "LocationServicesTests" */ = {
 			isa = XCConfigurationList;
@@ -458,6 +481,7 @@
 				D8E103641410263600A403DB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
