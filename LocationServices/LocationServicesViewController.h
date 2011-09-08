@@ -18,7 +18,12 @@
 @property (strong, nonatomic) IBOutlet UILabel *longitudeLabel;
 @property (strong, nonatomic) IBOutlet UILabel *headingLabel;
 @property (strong, nonatomic) IBOutlet UILabel *altitudeLabel;
+@property (strong, nonatomic) IBOutlet UILabel *hAccLabel;
+@property (strong, nonatomic) IBOutlet UILabel *vAccLabel;
+@property (strong, nonatomic) IBOutlet UILabel *lsLabel;
 @property (strong, nonatomic) CLLocation *currentLocation;
 @property (strong, nonatomic) CLHeading *currentHeading;
+@property (strong, nonatomic) NSNumberFormatter *degreesFormatter;
+@property (strong, nonatomic) NSNumberFormatter *distanceFormatter;
 
 @end

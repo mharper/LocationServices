@@ -14,8 +14,13 @@
 @synthesize longitudeLabel;
 @synthesize headingLabel;
 @synthesize altitudeLabel;
+@synthesize hAccLabel;
+@synthesize vAccLabel;
+@synthesize lsLabel;
 @synthesize currentLocation;
 @synthesize currentHeading;
+@synthesize degreesFormatter;
+@synthesize distanceFormatter;
 
 - (void)didReceiveMemoryWarning
 {
@@ -30,6 +35,10 @@
     [super viewDidLoad];
   [self addObserver:self forKeyPath:@"currentLocation" options:NSKeyValueObservingOptionNew context:nil];
   [self addObserver:self forKeyPath:@"currentHeading" options:NSKeyValueObservingOptionNew context:nil];
+  self.degreesFormatter = [[NSNumberFormatter alloc] init];
+  degreesFormatter.maximumFractionDigits = 6;
+  self.distanceFormatter = [[NSNumberFormatter alloc] init];
+  distanceFormatter.maximumFractionDigits = 1;
 }
 
 - (void)viewDidUnload
@@ -73,7 +82,29 @@
 
 - (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status
 {
-  NSLog(@"didChangeAuthorizationStatus called with status %d", status);
+  NSString *lsStatus = @"";
+  switch (status)
+  {
+    case kCLAuthorizationStatusNotDetermined:
+      lsStatus = @"Undetermined";
+      break;
+      
+    case kCLAuthorizationStatusRestricted:
+      lsStatus = @"Restricted";
+      break;
+      
+    case kCLAuthorizationStatusDenied:
+      lsStatus = @"Denied";
+      break;
+      
+    case kCLAuthorizationStatusAuthorized:
+      lsStatus = @"Authorized";
+      break;
+      
+    default:
+      break;
+  }
+  lsLabel.text = lsStatus;
 }
 
 -(void) locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
@@ -92,15 +123,17 @@
 {
   if ([keyPath isEqualToString:@"currentLocation"])
   {
-  CLLocation *newLocation = [change objectForKey:NSKeyValueChangeNewKey];
-  latitudeLabel.text = [NSString stringWithFormat:@"%f", newLocation.coordinate.latitude];
-  longitudeLabel.text = [NSString stringWithFormat:@"%f", newLocation.coordinate.longitude];
-  altitudeLabel.text = [NSString stringWithFormat:@"%f", newLocation.altitude];
+    CLLocation *newLocation = [change objectForKey:NSKeyValueChangeNewKey];
+    latitudeLabel.text = [degreesFormatter stringFromNumber:[NSNumber numberWithFloat:newLocation.coordinate.latitude]];
+    longitudeLabel.text = [degreesFormatter stringFromNumber:[NSNumber numberWithFloat:newLocation.coordinate.longitude]];
+    altitudeLabel.text = [distanceFormatter stringFromNumber:[NSNumber numberWithFloat:newLocation.altitude]];
+    hAccLabel.text = [distanceFormatter stringFromNumber:[NSNumber numberWithFloat:newLocation.horizontalAccuracy]];
+    vAccLabel.text = [distanceFormatter stringFromNumber:[NSNumber numberWithFloat:newLocation.verticalAccuracy]];
   }
   else if ([keyPath isEqualToString:@"currentHeading"])
   {
     CLHeading *newHeading = [change objectForKey:NSKeyValueChangeNewKey];
-    headingLabel.text = [NSString stringWithFormat:@"%f", newHeading.magneticHeading];
+    headingLabel.text = [degreesFormatter stringFromNumber:[NSNumber numberWithFloat:newHeading.magneticHeading]];
   }
 }
 

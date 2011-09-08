@@ -14,8 +14,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D8E103271410263600A403DB"
-               BuildableName = "LocationServices.app"
-               BlueprintName = "LocationServices"
+               BuildableName = "Locinator.app"
+               BlueprintName = "Locinator"
                ReferencedContainer = "container:LocationServices.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -51,8 +51,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D8E103271410263600A403DB"
-            BuildableName = "LocationServices.app"
-            BlueprintName = "LocationServices"
+            BuildableName = "Locinator.app"
+            BlueprintName = "Locinator"
             ReferencedContainer = "container:LocationServices.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -69,8 +69,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D8E103271410263600A403DB"
-            BuildableName = "LocationServices.app"
-            BlueprintName = "LocationServices"
+            BuildableName = "Locinator.app"
+            BlueprintName = "Locinator"
             ReferencedContainer = "container:LocationServices.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

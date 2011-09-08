@@ -42,7 +42,7 @@
 		B5E105C9141862000088AB8C /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		B5E105CB141862450088AB8C /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		B5E105CD141865350088AB8C /* AppIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon.png; sourceTree = "<group>"; };
-		D8E103281410263600A403DB /* LocationServices.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocationServices.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8E103281410263600A403DB /* Locinator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Locinator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8E1032C1410263600A403DB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D8E1032E1410263600A403DB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D8E103301410263600A403DB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -116,7 +116,7 @@
 		D8E103291410263600A403DB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D8E103281410263600A403DB /* LocationServices.app */,
+				D8E103281410263600A403DB /* Locinator.app */,
 				D8E1034C1410263600A403DB /* LocationServicesTests.octest */,
 			);
 			name = Products;
@@ -180,9 +180,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D8E103271410263600A403DB /* LocationServices */ = {
+		D8E103271410263600A403DB /* Locinator */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D8E1035F1410263600A403DB /* Build configuration list for PBXNativeTarget "LocationServices" */;
+			buildConfigurationList = D8E1035F1410263600A403DB /* Build configuration list for PBXNativeTarget "Locinator" */;
 			buildPhases = (
 				D8E103241410263600A403DB /* Sources */,
 				D8E103251410263600A403DB /* Frameworks */,
@@ -192,9 +192,9 @@
 			);
 			dependencies = (
 			);
-			name = LocationServices;
+			name = Locinator;
 			productName = LocationServices;
-			productReference = D8E103281410263600A403DB /* LocationServices.app */;
+			productReference = D8E103281410263600A403DB /* Locinator.app */;
 			productType = "com.apple.product-type.application";
 		};
 		D8E1034B1410263600A403DB /* LocationServicesTests */ = {
@@ -237,7 +237,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D8E103271410263600A403DB /* LocationServices */,
+				D8E103271410263600A403DB /* Locinator */,
 				D8E1034B1410263600A403DB /* LocationServicesTests */,
 			);
 		};
@@ -307,7 +307,7 @@
 /* Begin PBXTargetDependency section */
 		D8E103531410263600A403DB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = D8E103271410263600A403DB /* LocationServices */;
+			target = D8E103271410263600A403DB /* Locinator */;
 			targetProxy = D8E103521410263600A403DB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -401,6 +401,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LocationServices/LocationServices-Prefix.pch";
 				INFOPLIST_FILE = "LocationServices/LocationServices-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -413,6 +414,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LocationServices/LocationServices-Prefix.pch";
 				INFOPLIST_FILE = "LocationServices/LocationServices-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "B52D6E53-E9EA-47D1-873E-AD4A57499E17";
 				WRAPPER_EXTENSION = app;
@@ -465,7 +467,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D8E1035F1410263600A403DB /* Build configuration list for PBXNativeTarget "LocationServices" */ = {
+		D8E1035F1410263600A403DB /* Build configuration list for PBXNativeTarget "Locinator" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D8E103601410263600A403DB /* Debug */,
