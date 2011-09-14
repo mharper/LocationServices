@@ -13,6 +13,11 @@ This project started as a simple answer to [this question](http://stackoverflow.
 
 I decided to evolve this into a simple "You Are Here" sort of app, except that it would display your coordinates as opposed to your location on a map.  From there it was simply a matter of piling on more and more data until the screen filled up with raw numerical goodness.
 
+Fasten Your Seat Belt
+---------------------
+
+![awesome screenshot](Screenshot.png)
+
 Fine Print
 ----------
 Note that this was built with a beta version of Xcode 4.2 against a beta version of iOS 5. It also uses Automatic Reference Counting (ARC), hence the absence of retains and releases. It *should* run on iOS versions all the way back to 4.2, however.
