@@ -8,10 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
+#import <CoreMotion/CoreMotion.h>
 
 @interface LocationServicesViewController : UIViewController<CLLocationManagerDelegate>
 {
-  
 }
 
 @property (strong, nonatomic) IBOutlet UILabel *latitudeLabel;
@@ -25,5 +25,10 @@
 @property (strong, nonatomic) CLHeading *currentHeading;
 @property (strong, nonatomic) NSNumberFormatter *degreesFormatter;
 @property (strong, nonatomic) NSNumberFormatter *distanceFormatter;
+@property (strong, nonatomic) IBOutlet UILabel *pitchLabel;
+@property (strong, nonatomic) IBOutlet UILabel *rollLabel;
+@property (strong, nonatomic) IBOutlet UILabel *yawLabel;
+
+-(void) updateMotionInfo:(CMDeviceMotion *) motionInfo;
 
 @end

@@ -21,61 +21,47 @@
 @synthesize currentHeading;
 @synthesize degreesFormatter;
 @synthesize distanceFormatter;
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Release any cached data, images, etc that aren't in use.
-}
+@synthesize pitchLabel;
+@synthesize rollLabel;
+@synthesize yawLabel;
 
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
+  [super viewDidLoad];
   [self addObserver:self forKeyPath:@"currentLocation" options:NSKeyValueObservingOptionNew context:nil];
   [self addObserver:self forKeyPath:@"currentHeading" options:NSKeyValueObservingOptionNew context:nil];
   self.degreesFormatter = [[NSNumberFormatter alloc] init];
+  degreesFormatter.minimumIntegerDigits = 1;
   degreesFormatter.maximumFractionDigits = 6;
   self.distanceFormatter = [[NSNumberFormatter alloc] init];
+  distanceFormatter.minimumIntegerDigits = 1;
   distanceFormatter.maximumFractionDigits = 1;
 }
 
 - (void)viewDidUnload
 {
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
-}
-
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-}
-
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-}
-
-- (void)viewWillDisappear:(BOOL)animated
-{
-	[super viewWillDisappear:animated];
-}
-
-- (void)viewDidDisappear:(BOOL)animated
-{
-	[super viewDidDisappear:animated];
+  [self removeObserver:self forKeyPath:@"currentLocation"];
+  [self removeObserver:self forKeyPath:@"currentHeading"];
+  [self setLatitudeLabel:nil];
+  [self setLongitudeLabel:nil];
+  [self setHeadingLabel:nil];
+  [self setAltitudeLabel:nil];
+  [self setHAccLabel:nil];
+  [self setVAccLabel:nil];
+  [self setLsLabel:nil];
+  [self setPitchLabel:nil];
+  [self setRollLabel:nil];
+  [self setYawLabel:nil];
+  [self setDegreesFormatter:nil];
+  [self setDistanceFormatter:nil];
+  [super viewDidUnload];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    // Return YES for supported orientations
-  if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-      return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
-  } else {
-      return YES;
-  }
+  return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
 #pragma mark CLLocationManagerDelegate methods
@@ -109,31 +95,46 @@
 
 -(void) locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
 {
-  self.currentLocation = newLocation;
+  if (newLocation.horizontalAccuracy > 0)
+  {
+    self.currentLocation = newLocation;    
+  }
 }
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateHeading:(CLHeading *)newHeading
 {
-  self.currentHeading = newHeading;
+  if (newHeading.headingAccuracy > 0)
+  {
+    self.currentHeading = newHeading;
+  }
+}
+
+-(void) updateMotionInfo:(CMDeviceMotion *) motionInfo
+{
+  NSNumber *number = [NSNumber alloc];
+  pitchLabel.text = [degreesFormatter stringFromNumber:[number initWithDouble:radiansToDegrees(motionInfo.attitude.pitch)]];
+  rollLabel.text = [degreesFormatter stringFromNumber:[number initWithDouble:radiansToDegrees(motionInfo.attitude.roll)]];
+  yawLabel.text = [degreesFormatter stringFromNumber:[number initWithDouble:radiansToDegrees(motionInfo.attitude.yaw)]];
 }
 
 #pragma mark KVO
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
+  NSNumber *number = [NSNumber alloc];
   if ([keyPath isEqualToString:@"currentLocation"])
   {
     CLLocation *newLocation = [change objectForKey:NSKeyValueChangeNewKey];
-    latitudeLabel.text = [degreesFormatter stringFromNumber:[NSNumber numberWithFloat:newLocation.coordinate.latitude]];
-    longitudeLabel.text = [degreesFormatter stringFromNumber:[NSNumber numberWithFloat:newLocation.coordinate.longitude]];
-    altitudeLabel.text = [distanceFormatter stringFromNumber:[NSNumber numberWithFloat:newLocation.altitude]];
-    hAccLabel.text = [distanceFormatter stringFromNumber:[NSNumber numberWithFloat:newLocation.horizontalAccuracy]];
-    vAccLabel.text = [distanceFormatter stringFromNumber:[NSNumber numberWithFloat:newLocation.verticalAccuracy]];
+    latitudeLabel.text = [degreesFormatter stringFromNumber:[number initWithFloat:newLocation.coordinate.latitude]];
+    longitudeLabel.text = [degreesFormatter stringFromNumber:[number initWithFloat:newLocation.coordinate.longitude]];
+    altitudeLabel.text = [distanceFormatter stringFromNumber:[number initWithFloat:newLocation.altitude]];
+    hAccLabel.text = [distanceFormatter stringFromNumber:[number initWithFloat:newLocation.horizontalAccuracy]];
+    vAccLabel.text = [distanceFormatter stringFromNumber:[number initWithFloat:newLocation.verticalAccuracy]];
   }
   else if ([keyPath isEqualToString:@"currentHeading"])
   {
     CLHeading *newHeading = [change objectForKey:NSKeyValueChangeNewKey];
-    headingLabel.text = [degreesFormatter stringFromNumber:[NSNumber numberWithFloat:newHeading.magneticHeading]];
+    headingLabel.text = [degreesFormatter stringFromNumber:[number initWithFloat:newHeading.magneticHeading]];
   }
 }
 

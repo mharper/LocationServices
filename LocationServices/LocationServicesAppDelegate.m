@@ -10,12 +10,21 @@
 
 #import "LocationServicesViewController.h"
 
+@interface LocationServicesAppDelegate ()
+
+-(void) startMotionUpdates;
+-(void) stopMotionUpdates;
+
+@end
+
 @implementation LocationServicesAppDelegate
 
 @synthesize window = _window;
 @synthesize viewController = _viewController;
 
 CLLocationManager *locationManager;
+CMMotionManager *motionManager;
+NSOperationQueue *motionQueue;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -42,6 +51,7 @@ CLLocationManager *locationManager;
     [locationManager stopUpdatingLocation];
     [locationManager stopUpdatingHeading];
   }
+  [self stopMotionUpdates];
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
@@ -68,6 +78,7 @@ CLLocationManager *locationManager;
   }
   [locationManager startUpdatingLocation];
   [locationManager startUpdatingHeading];
+  [self startMotionUpdates];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
@@ -77,6 +88,31 @@ CLLocationManager *locationManager;
    Save data if appropriate.
    See also applicationDidEnterBackground:.
    */
+}
+
+-(void) startMotionUpdates
+{
+  if (motionQueue == nil)
+  {
+    motionQueue = [[NSOperationQueue alloc] init];
+  }
+  
+  if (motionManager == nil)
+  {
+    motionManager = [[CMMotionManager alloc] init];
+  }
+  motionManager.deviceMotionUpdateInterval = 0.5;
+  [motionManager startDeviceMotionUpdatesToQueue:motionQueue withHandler:^(CMDeviceMotion *motion, NSError *error) {
+    [self.viewController performSelectorOnMainThread:@selector(updateMotionInfo:) withObject:motion waitUntilDone:NO];
+  }];
+}
+
+-(void) stopMotionUpdates
+{
+  if (motionManager != nil)
+  {
+    [motionManager stopDeviceMotionUpdates];
+  }
 }
 
 @end

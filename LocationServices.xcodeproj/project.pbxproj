@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		B5E105CA141862000088AB8C /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B5E105C9141862000088AB8C /* Icon@2x.png */; };
 		B5E105CC141862450088AB8C /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B5E105CB141862450088AB8C /* Icon.png */; };
-		B5E105CE141865350088AB8C /* AppIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = B5E105CD141865350088AB8C /* AppIcon.png */; };
+		D87348FA141FF03C0060F374 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D87348F9141FF03C0060F374 /* CoreMotion.framework */; };
 		D8E1032D1410263600A403DB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8E1032C1410263600A403DB /* UIKit.framework */; };
 		D8E1032F1410263600A403DB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8E1032E1410263600A403DB /* Foundation.framework */; };
 		D8E103311410263600A403DB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8E103301410263600A403DB /* CoreGraphics.framework */; };
@@ -18,7 +18,6 @@
 		D8E1033D1410263600A403DB /* LocationServicesAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D8E1033C1410263600A403DB /* LocationServicesAppDelegate.m */; };
 		D8E103401410263600A403DB /* LocationServicesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8E1033F1410263600A403DB /* LocationServicesViewController.m */; };
 		D8E103431410263600A403DB /* LocationServicesViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8E103411410263600A403DB /* LocationServicesViewController_iPhone.xib */; };
-		D8E103461410263600A403DB /* LocationServicesViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8E103441410263600A403DB /* LocationServicesViewController_iPad.xib */; };
 		D8E1034E1410263600A403DB /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8E1034D1410263600A403DB /* SenTestingKit.framework */; };
 		D8E1034F1410263600A403DB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8E1032C1410263600A403DB /* UIKit.framework */; };
 		D8E103501410263600A403DB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8E1032E1410263600A403DB /* Foundation.framework */; };
@@ -42,6 +41,7 @@
 		B5E105C9141862000088AB8C /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		B5E105CB141862450088AB8C /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		B5E105CD141865350088AB8C /* AppIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon.png; sourceTree = "<group>"; };
+		D87348F9141FF03C0060F374 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		D8E103281410263600A403DB /* Locinator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Locinator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8E1032C1410263600A403DB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D8E1032E1410263600A403DB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -55,7 +55,6 @@
 		D8E1033E1410263600A403DB /* LocationServicesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocationServicesViewController.h; sourceTree = "<group>"; };
 		D8E1033F1410263600A403DB /* LocationServicesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocationServicesViewController.m; sourceTree = "<group>"; };
 		D8E103421410263600A403DB /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/LocationServicesViewController_iPhone.xib; sourceTree = "<group>"; };
-		D8E103451410263600A403DB /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/LocationServicesViewController_iPad.xib; sourceTree = "<group>"; };
 		D8E1034C1410263600A403DB /* LocationServicesTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LocationServicesTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8E1034D1410263600A403DB /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		D8E103561410263600A403DB /* LocationServicesTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LocationServicesTests-Info.plist"; sourceTree = "<group>"; };
@@ -70,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D87348FA141FF03C0060F374 /* CoreMotion.framework in Frameworks */,
 				D8E10366141026E900A403DB /* CoreLocation.framework in Frameworks */,
 				D8E1032D1410263600A403DB /* UIKit.framework in Frameworks */,
 				D8E1032F1410263600A403DB /* Foundation.framework in Frameworks */,
@@ -104,8 +104,8 @@
 		D8E1031D1410263500A403DB = {
 			isa = PBXGroup;
 			children = (
+				D87348F9141FF03C0060F374 /* CoreMotion.framework */,
 				B5E105CF141866270088AB8C /* Resources */,
-				D8E10365141026E900A403DB /* CoreLocation.framework */,
 				D8E103321410263600A403DB /* LocationServices */,
 				D8E103541410263600A403DB /* LocationServicesTests */,
 				D8E1032B1410263600A403DB /* Frameworks */,
@@ -125,6 +125,7 @@
 		D8E1032B1410263600A403DB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D8E10365141026E900A403DB /* CoreLocation.framework */,
 				D8E1032C1410263600A403DB /* UIKit.framework */,
 				D8E1032E1410263600A403DB /* Foundation.framework */,
 				D8E103301410263600A403DB /* CoreGraphics.framework */,
@@ -141,7 +142,6 @@
 				D8E1033E1410263600A403DB /* LocationServicesViewController.h */,
 				D8E1033F1410263600A403DB /* LocationServicesViewController.m */,
 				D8E103411410263600A403DB /* LocationServicesViewController_iPhone.xib */,
-				D8E103441410263600A403DB /* LocationServicesViewController_iPad.xib */,
 				D8E103331410263600A403DB /* Supporting Files */,
 			);
 			path = LocationServices;
@@ -250,10 +250,8 @@
 			files = (
 				D8E103371410263600A403DB /* InfoPlist.strings in Resources */,
 				D8E103431410263600A403DB /* LocationServicesViewController_iPhone.xib in Resources */,
-				D8E103461410263600A403DB /* LocationServicesViewController_iPad.xib in Resources */,
 				B5E105CA141862000088AB8C /* Icon@2x.png in Resources */,
 				B5E105CC141862450088AB8C /* Icon.png in Resources */,
-				B5E105CE141865350088AB8C /* AppIcon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,14 +327,6 @@
 			name = LocationServicesViewController_iPhone.xib;
 			sourceTree = "<group>";
 		};
-		D8E103441410263600A403DB /* LocationServicesViewController_iPad.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D8E103451410263600A403DB /* en */,
-			);
-			name = LocationServicesViewController_iPad.xib;
-			sourceTree = "<group>";
-		};
 		D8E103571410263600A403DB /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -370,7 +360,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -390,7 +380,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -410,13 +400,13 @@
 		D8E103611410263600A403DB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Christopher Sexton (TAEU4KSXF8)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LocationServices/LocationServices-Prefix.pch";
 				INFOPLIST_FILE = "LocationServices/LocationServices-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "B52D6E53-E9EA-47D1-873E-AD4A57499E17";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
