@@ -16,7 +16,7 @@ I decided to evolve this into a simple "You Are Here" sort of app, except that i
 Fasten Your Seat Belt
 ---------------------
 
-![awesome screenshot](Screenshot.png)
+![awesome screenshot](http://github.com/mharper/LocationServices/raw/master/Screenshot.png)
 
 Fine Print
 ----------
